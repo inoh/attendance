@@ -2,8 +2,9 @@ doctype html
 html
   head
     title Attendance
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all'
+    script src='/application.js'
     = csrf_meta_tags
   body
-    = yield
+    div#app-main
+      =yield
