@@ -24,10 +24,10 @@ ViewModels.WorkIndex = Vue.extend
       endDate = @toMoment().endOf('month')
       endPosition = if endDate.day() == 0 then 0 else 7 - endDate.day()
       endDate.add endPosition, 'days'
-      result = []
-      until cur.diff(endDate, 'days') > 0
-        result.push cur.clone()
+      result = [cur.clone()]
+      while cur.diff(endDate, 'days') < 0
         cur.add 1, 'days'
+        result.push cur.clone()
       result
     # 現在の年月からmomentオブジェクトを生成
     # @return {Moment} 現在年月。日にちは 1 固定　
