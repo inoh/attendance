@@ -1,5 +1,5 @@
 #works
-  header
+  header.top
     a.prev href="javascript:void(0)" @click="prev" <
     a.next href="javascript:void(0)" @click="next" >
     p.title = "{{ year }}年 {{ month }}月"
@@ -14,4 +14,4 @@
       p 日
     div
       section.day v-for="date in dates()"
-        p.title v-text="date.format('D')"
+        label.title v-text="date.format('D')"
